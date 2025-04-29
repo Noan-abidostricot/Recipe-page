@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Align elements in a column */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    background-color: var(--stone_100);
+}
+
+/* 3. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%; /* Ensure images are responsive */
+}
+
+/* 4. Inherit fonts for form controls */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 5. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* 6. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/* 9. Create a root stacking context */
+#root, #__next {
+    isolation: isolate;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --stone_100: hsl(30, 54%, 90%);
+    --stone_150: hsl(30, 18%, 87%);
+    --stone_600: hsl(30, 10%, 34%);
+    --stone_900: hsl(24, 5%, 18%);
+    --brown_800: hsl(14, 45%, 36%);
+    --rose_800: hsl(332, 51%, 32%);
+    --rose_50: hsl(330, 100%, 98%);
+}
+
+.recipe {
+    width: 736px;
+    min-height: 1710px; /* Change height to min-height for flexibility */
+    background-color: var(--white);
+    border-radius: 25px;
+}
+
+.img {
+    width: 698px;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+img {
+    border-radius: 15px;
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+}
+
+.title {
+    font-size: 20px;
+    font-family: 'YoungSerif';
+    margin-top: 30px;
+    margin-left: 39px;
+}
+
+.description {
+    font-family: 'Outfit';
+    margin-left: 40px;
+    margin-top: 15px;
+    width: 650px;
+}
+
+.preparation-time {
+    height: auto; /* Let the height adapt to content */
+    width: 89%;
+    font-size: 17px;
+    font-family: 'Outfit';
+    margin-top: 35px;
+    margin-left: 40px;
+    font-weight: 100;
+    color: var(--brown_800);
+    background-color: var(--rose_50);
+    padding-left: 26px;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+ul li {
+    color: var(--stone_900);
+    list-style-position: outside;
+    font-size: 16px;
+    margin-left: 21.5px;
+    margin-top: 11.5px;
+    line-height: 20px;
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+ul li::marker {
+    font-size: 13px;
+    color: var(--rose_800);
+}
+
+ul {
+    font-size: 10px;
+}
+
+span {
+    color: var(--stone_600);
+    font-weight: 600;
+}
+
+.ingredients {
+    width: 657px;
+    font-family: 'YoungSerif';
+    color: var(--brown_800);
+    margin-top: 28px;
+    margin-left: 39px;
+    font-size: 18px;
+    border-bottom: 1px solid var(--stone_150);
+}
+
+.ingredients h2 {
+    letter-spacing: 0.5px;
+}
+
+.ingredients ul {
+    margin-top: 20px;
+    font-family: 'Outfit';
+    padding-bottom: 33px;
+}
+
+.instructions {
+    margin-top: 27px;
+    margin-left: 40px;
+}
+
+.instructions h2 {
+    font-family: 'YoungSerif';
+    font-size: 28px;
+    color: var(--brown_800);
+}
+
+ol {
+    counter-reset: list-counter;
+    list-style: none;
+    margin-top: 15px;
+    margin-left: 8px;
+    line-height: 28px;
+}
+
+ol li {
+    counter-increment: list-counter;
+    position: relative;
+    font-family: 'Outfit';
+    padding-left: 32px;
+    width: 630px;
+}
+
+ol li::before {
+    content: counter(list-counter) ".";
+    font-size: 16px;
+    color: var(--rose_800);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+.nutrition {
+    margin-top: 55px;
+    margin-left: 41px;
+}
+
+.nutrition h2 {
+    color: var(--brown_800);
+    font-size: 33px;
+}
+
+.nutrition .description {
+    margin-left: -1px;
+    margin-top: 11px;
+    font-weight: 400;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 26px;
+}
+
+.box {
+    display: flex;
+}
+
+table {
+    font-family: 'Outfit';
+    margin-left: -1px;
+    margin-top: 24px;
+    border-collapse: collapse;
+}
+
+tr td {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 31px;
+    border-bottom: 1px solid var(--stone_150);
+    color: var(--stone_600);
+}
+
+/* Applique le border-bottom à tous les td sauf le dernier de chaque tr */
+td not:(:last-child) {
+    border-bottom: 0px solid var(--stone_150);
+}
+
+tr td:nth-child(2) {
+    font-weight: 700;
+    color: var(--brown_800);
+    padding-left: 245px;
+    padding-right: 265px;
+}
+
+
+table tr:last-child td {
+    border-bottom: none;
+}
